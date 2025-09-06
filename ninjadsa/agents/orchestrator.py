@@ -1,4 +1,4 @@
-
+# agents/orchestrator.py
 from typing import Dict, Any
 from .curriculum_agent import CurriculumAgent
 from .author_agent import AuthorAgent
@@ -19,8 +19,21 @@ class Orchestrator:
         self.explainer = ExplainerAgent()
         self.exporter = ExporterAgent()
 
-    def run(self, topic: str, difficulty: str, seed: int = 42) -> Dict[str, Any]:
-        state: Dict[str, Any] = {"topic": topic, "difficulty": difficulty, "seed": seed, "artifacts_dir": self.artifacts_dir}
+    def run(
+        self,
+        topic: str,
+        difficulty: str,
+        seed: int = 42,
+        pattern: str | None = None,   # <— accept optional pattern override
+    ) -> Dict[str, Any]:
+        state: Dict[str, Any] = {
+            "topic": topic,
+            "difficulty": difficulty,
+            "seed": seed,
+            "pattern": pattern,               # make pattern available to CurriculumAgent
+            "artifacts_dir": self.artifacts_dir,
+        }
+
         state.update(self.curriculum.act(state))
         state.update(self.author.act(state))
         state.update(self.solver.act(state))
