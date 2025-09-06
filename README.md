@@ -76,47 +76,7 @@ streamlit run app.py
 Open the browser tab:
 Read the problem, paste your solution function, click Run Tests
 Reveal the Hints and Editorial progressively
-8) Enable Gemini Flash (Optional)
-Install SDK
-pip install -U google-genai
-(Add google-genai>=1.0.0 to requirements.txt.)
-Set environment variables (macOS)
-export GEMINI_API_KEY="PASTE-YOUR-KEY"
-export LLM_MODEL="gemini-1.5-flash"
-(For project use in VS Code, add a .env with those two lines and set .vscode/settings.json → "python.envFile": "${workspaceFolder}/.env".)
-Regenerate & run
-python main.py --topic arrays --difficulty easy
-streamlit run app.py
-If the key is missing, the LLM client safely returns original text—nothing breaks.
-9) Deployment
-Streamlit Cloud
-Push this repo to GitHub.
-Create a new Streamlit app → entrypoint app.py.
-If using Gemini, add GEMINI_API_KEY and LLM_MODEL as secrets.
-Optionally run python main.py on deploy (or commit artifacts).
-Hugging Face Spaces (Streamlit)
-Create a new Space → choose Streamlit.
-Set commands: pip install -r requirements.txt && python main.py && streamlit run app.py.
-Add secrets for Gemini only if enabling the LLM.
-10) Originality / Plagiarism Strategy
-Statements, hints, editorial are original.
-Randomized tests reduce overlap/run-to-run similarity.
-When LLM is enabled, it’s used for paraphrasing and clarity—not for copying public text.
-Everything needed to re-generate outputs locally is included.
-11) Troubleshooting
-“No artifacts found” in the UI
-Run:
-python main.py --topic arrays --difficulty easy
-streamlit run app.py
-Streamlit not found
-Activate venv and install deps:
-source .venv/bin/activate
-pip install -r requirements.txt
-Gemini not detected
-Verify env vars:
-python -c "import os; print('has_key=', bool(os.environ.get('GEMINI_API_KEY')), 'model=', os.environ.get('LLM_MODEL'))"
-Expect: has_key= True, model= gemini-1.5-flash.
-12) Assignment Mapping (Company’s Requirements)
+8) Assignment Mapping
 Problem Statement — See Section 1.
 Why AI Agents / Multi-Agent Value — See Sections 1 & 3.
 Project Description — See Sections 2 & 3.
