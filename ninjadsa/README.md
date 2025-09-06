@@ -1,5 +1,5 @@
 
-# NinjaDSA — Multi‑Agent Problem Author & Tutor (Offline‑ready)
+# NinjaDSA — Multi‑Agent Problem Author & Tutor
 
 What it does: Generates a complete DSA problem bundle (problem statement, signature, constraints, examples, tests, reference solution, hints, editorial) and provides a Streamlit lesson page.
 
