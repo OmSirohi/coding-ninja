@@ -1,0 +1,1 @@
+Use a single pass and a hash map. For each value v, check if target-v was seen; else store v→i.

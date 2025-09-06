@@ -1,0 +1,3 @@
+- Hint 1: Try storing numbers you have seen along with their indices.
+- Hint 2: For each value v, what complement do you need to reach target?
+- Hint 3: A dictionary mapping number → index allows O(1) lookup.

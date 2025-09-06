@@ -1,0 +1,131 @@
+{
+  "problem": {
+    "title": "Two Sum (Unique Indices)",
+    "statement": "Given an array nums of integers and an integer target, return indices of the two numbers such that they add up to target. Assume exactly one solution and the same element cannot be used twice. Return the indices in increasing order.",
+    "signature": "def two_sum(nums: list[int], target: int) -> list[int]:",
+    "constraints": [
+      "2 <= len(nums) <= 1e5",
+      "-1e9 <= nums[i], target <= 1e9",
+      "There is exactly one valid pair"
+    ],
+    "examples": [
+      {
+        "in": {
+          "nums": [
+            2,
+            7,
+            11,
+            15
+          ],
+          "target": 9
+        },
+        "out": [
+          0,
+          1
+        ]
+      },
+      {
+        "in": {
+          "nums": [
+            3,
+            2,
+            4
+          ],
+          "target": 6
+        },
+        "out": [
+          1,
+          2
+        ]
+      }
+    ],
+    "tags": [
+      "hashing",
+      "array"
+    ],
+    "objectives": [
+      "hash map lookup",
+      "linear scan"
+    ],
+    "pattern": "two_sum"
+  },
+  "tests": [
+    {
+      "in": {
+        "nums": [
+          2,
+          7,
+          11,
+          15
+        ],
+        "target": 9
+      },
+      "out": [
+        0,
+        1
+      ]
+    },
+    {
+      "in": {
+        "nums": [
+          3,
+          2,
+          4
+        ],
+        "target": 6
+      },
+      "out": [
+        1,
+        2
+      ]
+    },
+    {
+      "in": {
+        "nums": [
+          -87,
+          -32,
+          -78,
+          96,
+          4,
+          99,
+          -73,
+          -91,
+          -3,
+          37,
+          43,
+          -15,
+          -13,
+          100,
+          -60,
+          -66,
+          -14,
+          90,
+          89,
+          79,
+          -38,
+          -59,
+          -100,
+          11,
+          98,
+          52,
+          -4,
+          -83,
+          -99,
+          -20
+        ],
+        "target": -49
+      },
+      "out": [
+        14,
+        23
+      ]
+    }
+  ],
+  "hints": [
+    "Hint 1: Try storing numbers you have seen along with their indices.",
+    "Hint 2: For each value v, what complement do you need to reach target?",
+    "Hint 3: A dictionary mapping number \u2192 index allows O(1) lookup."
+  ],
+  "editorial": "Use a single pass and a hash map. For each value v, check if target-v was seen; else store v\u2192i.",
+  "generated_at": 1757160381.188352
+}
